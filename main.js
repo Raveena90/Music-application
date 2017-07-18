@@ -1,6 +1,7 @@
 var currentSongNumber = 1;
 var willLoop = 0;
 var willShuffle = 0;
+
 var songs = [{
         'name': 'Tamma Tamma',
         'artist': 'Neha Kakkar, Monali Thakur, Ikka Singh, Dev Negi',
@@ -33,6 +34,108 @@ var songs = [{
         'fileName': 'song4.mp3',
 		'image' : 'song4.jpg'
     }]
+
+var songs_relax = [{
+	   'name': 'Four Five Seconds',
+        'artist': 'Kanye West, Rihanna',
+        'album': 'Four five seconds',
+        'duration': '3:10',
+       'fileName': 'song5.mp3',
+	   'image' : 'song5.jpg'
+    },
+    {
+        'name': 'Someone Like You',
+        'artist': 'Adele',
+        'album': '21',
+        'duration': '4:45',
+        'fileName': 'song6.mp3',
+	     'image' : 'song6.jpg'
+    },
+    
+    {
+        'name': 'Please do not go',
+        'artist': 'Barcelona',
+        'album': 'Absolutes',
+        'duration': '3:42',
+        'fileName': 'song7.mp3',
+		'image' : 'song7.jpg'
+    }]	
+	var songs_travel = [{
+	 'name': 'Journey Song',
+        'artist': 'Anupam Rai',
+        'album': 'Piku',
+        'duration': '4:11',
+       'fileName': 'song8.mp3',
+	   'image' : 'song8.jpg'
+    },
+    
+    {
+        'name': 'Banjarey',
+        'artist': 'Honey Singh',
+        'album': 'Fugly',
+        'duration': '4:02',
+        'fileName': 'song9.mp3',
+		'image' : 'song9.jpg'
+    },
+    {
+        'name': 'Dil Dhadkne DO',
+        'artist': 'Shanker Mahadevn',
+        'album': 'Zindagi na milegi dobara',
+        'duration': '3:49',
+        'fileName': 'song10.mp3',
+		'image' : 'song10.jpg'
+    }]	
+	var songs_party = [{
+	 'name': 'Suit Suit',
+        'artist': 'Arjun,Guru Randhawa',
+        'album': 'Hindi Medium',
+        'duration': '3:09',
+       'fileName': 'song11.mp3',
+	   'image' : 'song11.jpg'
+    },
+    
+    {
+        'name': 'Sada Move',
+        'artist': 'Diljit Dosanjh,Raftaar',
+        'album': 'Raabta',
+        'duration': '2:27',
+        'fileName': 'song12.mp3',
+		'image' : 'song12.jpg'
+    },
+    {
+        'name': 'Radio',
+        'artist': 'Kamal Khan,Amit Mishra',
+        'album': 'Tubelight',
+        'duration': '4:45',
+        'fileName': 'song13.mp3',
+		'image' : 'song13.jpg'
+    }]	
+	
+	var songs_work = [{
+	 'name': 'Watermark',
+        'artist': 'Enya',
+        'album': 'Watermark',
+        'duration': '2:25',
+       'fileName': 'song14.mp3',
+	   'image' : 'song14.jpg'
+    },
+    
+    {
+        'name': 'A sky full of stars',
+        'artist': 'Coldplay',
+        'album': 'Ghost stories',
+        'duration': '5:34',
+        'fileName': 'song15.mp3',
+		'image' : 'song15.jpg'
+    },
+    {
+        'name': 'Magic',
+        'artist': 'Coldplay',
+        'album': 'Ghost stories',
+        'duration': '4:44',
+        'fileName': 'song16.mp3',
+		'image' : 'song16.jpg'
+    }]	
 
 function fancyTimeFormat(time)
 {   
@@ -115,12 +218,10 @@ function fancyTimeFormat(time)
 			//var songName3 = 'Nashe Si Chadh Gayi';
 			//var songName4 = 'The Breakup Song';
 	
-			$('#songs').DataTable({
+			$('#songs').dataTable({
             paging: false
     });
 			}	
-	$('#songs').DataTable({
-	paging:false});
 
 	$('.fa-repeat').on('click',function(){
 $('.fa-repeat').toggleClass('disabled')
