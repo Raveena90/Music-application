@@ -154,7 +154,20 @@ function fancyTimeFormat(time)
     ret += "" + mins + ":" + (secs < 10 ? "0" : "");
     ret += "" + secs;
     return ret;
+	
 }
+
+
+
+	 function updateTimer(){
+		 var song = document.querySelector('audio');
+		 var ct = song.currentTime;
+		 var td = song.duration;
+		 var percentage = (ct/td)*100;
+		 $('.progress-filled').css('width', percentage+ "%");
+	 }
+	 
+	 
 	 
 	 function toggleSong() {
 		var song = document.querySelector('audio');
@@ -211,6 +224,7 @@ function fancyTimeFormat(time)
 			updateCurrentTime();
 			setInterval(function() {
 			updateCurrentTime();
+			updateTimer();
 			},1000);
 			
 			//var songName1 = 'Tamma Tamma';
@@ -272,7 +286,6 @@ willShuffle=1-willShuffle;
 					
 	
 		$('.welcome-screen button').on('click', function() {
-	
         var name = $('#name-input').val();
 	/*condition ke true hone pr msg aata*/
         if (name.length > 2) {
@@ -286,7 +299,51 @@ willShuffle=1-willShuffle;
             $('#name-input').addClass('error');
         }
     });
-	
+													
+					function addSongNameClickEvent(songObj,position) {
+                    var id= '#song' + position;
+                    var songName = songObj.filename;
+                    $(id).click(function() {
+						var audio = document.querySelector('audio');
+						 var currentSong = audio.src;
+						 if(currentSong.search(songName) != -1)
+						 {
+							 toggleSong();
+						 }
+						
+						 else{
+							 audio.src = songname;
+							 toggleSong();
+							 changeCurrentSongDetails(songObj);
+							 $('#now playing').removeClass('run-animation');
+							 setTimeout(function(){
+								 $('#now-playing').addClass('run-animation');
+							 },10);
+							 console.log("I'm runn");
+						 }
+					});
+					}
+					function changeCurrentSongDetails(songObj) {
+						$('.current-song-image').attr('src','img/' + songObj.image)
+						$('.current-song-name').text(songObj.name)
+						$('.current-song-album').text(songObj.album)
+					}
+					function whichPlaylist(){
+						if(pop == 1){
+						songs = songs_relax;
+						}
+						else if(travel== 1){
+							console.log("travel run");
+							songs = songs_travel;
+						}
+						else if(party == 1){					
+							songs = songs_party;
+						}
+						else if(work == 1){
+							songs = songs_work;
+						}
+						return songs;
+					}											
     $('.play-icon').on('click', function() {
         toggleSong(); 
     });
