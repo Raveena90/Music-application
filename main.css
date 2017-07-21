@@ -21,7 +21,7 @@ h1 {
 .wrapper {
     height: 100%;
     width: 100%;
-    background-color: #BBB;
+    background-color: light yellow;
 }
 
 .welcome-screen {
@@ -188,27 +188,43 @@ h1 {
 .current-song-album {
     margin-top: 0.4rem;
 }
-  /*DataTables overrides*/
+/*DataTables overrides*/
 table.dataTable tbody tr {
-    background-color: initial;
+  background-color: initial;
 }
 #songs_info {
-    display: none;
+  display: none;
 }
 
 #songs_filter {
-    color: transparent;
+  color: transparent;
 }
 #songs_filter input {
-    width: 400px;
-    margin-bottom: 1rem;
-    font-size: 16px;
+  width: 400px;
+  margin-bottom: 1rem;
+  font-size: 16px;
 }
-        
 .player-buttons .fa {
     margin-right: 2rem;
 }
 
 .fa.disabled {
     color: gray;
+}
+.mood{
+  margin: auto;
+  
+}
+.mood-list{
+  display: inline;
+  height: 150px;
+  width: 200RRpx;
+  padding: 7px;
+  
+}
+.mood-list-img{
+  height: 100%;
+  weight:100%;
+  margin:20px;
+  
 }
